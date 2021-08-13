@@ -4,7 +4,7 @@ module.exports = withFederatedSidecar({
   name: 'exampleRemote',
   filename: 'static/chunks/remoteEntry.js',
   exposes: {
-    './BizBirds': './pages/index.js',
+    './BizBirds': './components/BizBirds.js',
   },
   shared: {
     react: {
@@ -14,6 +14,9 @@ module.exports = withFederatedSidecar({
   }
 })({
   reactStrictMode: true,
+  images: {
+    domains: ['i.imgur.com']
+  },
   webpack(config) {
     config.output.publicPath = 'auto';
     return config;

@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import BizBirds from '../components/BizBirds'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [birdClapCount, setBirdClapCount] = useState(0);
   return (
     <div className={styles.container}>
       <Head>
@@ -14,9 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <button onClick={() => setBirdClapCount(birdClapCount + 1)}>👏👏👏</button>
-        <Image src={'/buisness-birds.gif'} alt="birds doin biz" width="500" height="281"/>
-        {'👏'.repeat(birdClapCount)}
+        <BizBirds />
       </main>
 
       <footer className={styles.footer}>
